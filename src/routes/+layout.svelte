@@ -1,7 +1,7 @@
 <script lang="ts">
 	import '../app.postcss';
-	export const ssr = false;
-	export const prerender = true;
 </script>
 
-<slot />
+<div class="flex flex-col w-full">
+	<slot />
+</div>
