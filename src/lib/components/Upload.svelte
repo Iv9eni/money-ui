@@ -2,15 +2,15 @@
     import { FileDropzone } from '@skeletonlabs/skeleton';
     import Icon from "@iconify/svelte";
 
-    let inFile : FileList;
-    export let outFile : FileList;
+    let file : FileList;
+    export let fileHandler;
 
-    const onChangeHandler = (e : Event) : void => {
-        console.log('file data:', e);
+    const onChangeHandler = (e : Event) => {
+        fileHandler(file);
     }
 </script>
 
-<FileDropzone class="w-[624px]" name="files" bind:files={inFile} on:change={onChangeHandler}>
+<FileDropzone class="w-[624px]" name="files" bind:files={file} on:change={onChangeHandler}>
 	<div class="justify-center" slot="lead">
         <Icon class="text-5xl w-screen" icon="mdi:file-upload" />
     </div>
