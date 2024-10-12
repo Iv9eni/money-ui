@@ -1,13 +1,20 @@
 <script lang="ts">
     import { FileDropzone } from '@skeletonlabs/skeleton';
     import Icon from "@iconify/svelte";
+
+    let inFile : FileList;
+    export let outFile : FileList;
+
+    const onChangeHandler = (e : Event) : void => {
+        console.log('file data:', e);
+    }
 </script>
 
-<FileDropzone class="grid grid-cols-1 xl:grid-cols-1 gap-9 px-3 py-3" name="files">
+<FileDropzone class="w-[624px]" name="files" bind:files={inFile} on:change={onChangeHandler}>
 	<div class="justify-center" slot="lead">
-        <Icon class="text-4xl" icon="mdi:file-upload" />
+        <Icon class="text-5xl w-screen" icon="mdi:file-upload" />
     </div>
 	<svelte:fragment slot="meta">
-        Only CVS allowed.
+        Upload an Excel or CVS.
     </svelte:fragment>
 </FileDropzone>
