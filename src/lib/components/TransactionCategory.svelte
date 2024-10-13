@@ -1,7 +1,18 @@
 <script lang="ts">
-    export let value;
+	import { Autocomplete } from "@skeletonlabs/skeleton";
+    import type { AutocompleteOption } from '@skeletonlabs/skeleton';
+
+    let isEditting : boolean = false;
+    let search : string = '';
+
+    export let value : string;
+    export const categories : string[] = ['car'];
 </script>
 
-<td>
-    {value}
+<td on:click={() => isEditting = !isEditting}>
+    {#if isEditting}
+        <Autocomplete allowlist={categories} />
+    {:else}
+        {value}
+    {/if}
 </td>

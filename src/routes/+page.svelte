@@ -30,18 +30,18 @@
     </div>
 
     { #if file != null }
-    <div class="flex-grow flex flex-col items-center justify-center w-screen mb-4">
-        <div class="w-3/4 mb-2">
-            <h1 class="text-4xl font-bold">Transactions</h1>
-        </div>
+        <div class="flex-grow flex flex-col items-center justify-center w-screen mb-4">
+            <div class="w-3/4 mb-4">
+                <h1 class="text-4xl font-bold">Transactions</h1>
+            </div>
 
-        <div class="flex-grow flex justify-center w-screen">
-            <TransactionTable data={transactions} />
+            <div class="flex-grow flex justify-center w-screen">
+                <TransactionTable data={transactions} />
+            </div>
         </div>
-    </div>
     { :else }
-    <div class="flex-grow flex justify-center items-center w-screen">
-        <Upload fileHandler={fileUploadHandler} />
-    </div>
+        <div class="flex-grow flex justify-center items-center w-screen">
+            <Upload fileHandler={fileUploadHandler} />
+        </div>
     { /if }
 </div>
