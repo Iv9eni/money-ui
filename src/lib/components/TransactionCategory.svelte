@@ -6,7 +6,7 @@
     let search : string = '';
 
     export let value : string;
-    export const categories : string[] = ['car'];
+    export const categories : string[] = ['Car', 'Entertainment', 'Groceries'];
 </script>
 
 <td on:click={() => isEditting = !isEditting}>
