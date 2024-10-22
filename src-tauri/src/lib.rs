@@ -1,5 +1,10 @@
+mod db;
+
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
 pub fn run() {
+
+  let connection = db::get_database_connection();
+
   tauri::Builder::default()
     .setup(|app| {
       if cfg!(debug_assertions) {

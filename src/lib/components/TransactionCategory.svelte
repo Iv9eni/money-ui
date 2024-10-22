@@ -1,7 +1,7 @@
 <script lang="ts">
-    export let value;
+	export let value;
 </script>
 
 <td>
-    {value}
+	{value}
 </td>
